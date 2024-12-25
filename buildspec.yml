@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - sudo yum install -y httpd
+  post_build:
+    commands:
+      - echo Starting Apache server...
+      - sudo systemctl start httpd
+artifacts:
+  files:
+    - '**/*'
